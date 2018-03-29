@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "SignalRClient";
+}
+
+<div style="padding:10px 0px 10px 10px">
+    New Messages:
+    <ul id="messagecontainer"></ul>
+</div>
+@section scripts {
+
+    <script src="~/Scripts/jquery.signalR-2.2.2.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+
+    <script>
+$(function () {
+// Reference the auto-generated proxy for the hub.
+var clientHub = $.connection.messageSender;
+// Create a function that the hub can call back to display messages.
+clientHub.client.broadcastMessage = function (message) {
+   // alert(message);
+    // Add the message to page.
+
+$('#messagecontainer').append('<li>' + message + '</li>');
+};
+$.connection.hub.start().done();
+});
+
+    </script>
+}

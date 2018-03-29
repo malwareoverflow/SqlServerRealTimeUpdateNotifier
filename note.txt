@@ -1,0 +1,6 @@
+this is based on visual studio 2015
+and sql server 2014 run create script on 
+db
+no dependencies except entity framework
+which can be easily created if found errors 
+from sql server connection 
