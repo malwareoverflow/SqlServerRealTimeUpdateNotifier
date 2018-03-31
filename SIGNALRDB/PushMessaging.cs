@@ -27,7 +27,7 @@ namespace SIGNALRDB
         {
             _dispatcher = dispatcher;
             //_connString = @"Server=.\sqlexpress;Database=testDB;Integrated Security=SSPI";
-            _connString = @"Data Source=VAMPIRE\SQLEXPRESS;Initial Catalog=Notifications;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework";
+            _connString = @"Your Entity FrameWork connection string here";
             _selectQuery = @"SELECT [MessageID],[UserID],[MessageText],[IsSent] FROM [dbo].[Message]";
             _newMessageNotifier = new NewMessageNotifier(_connString, _selectQuery);
             _newMessageNotifier.NewMessage += NewMessageRecieved;
